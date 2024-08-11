@@ -18,6 +18,7 @@ import {
   TypeSectionUl,
 } from "./StyleHome";
 import { useState } from "react";
+import HomeCalendar from "../../component/calendar/HomeCalendar";
 const Home = () => {
   const [arrowClick, setArrowClick] = useState(false);
   const handleClick = () => {
@@ -110,6 +111,7 @@ const Home = () => {
               <li>efgh</li>
             </TypeSectionTagUl>
           </TypeSection>
+          <HomeCalendar />
         </HomeProfileSection>
       </HomeInner>
       <Footer />
