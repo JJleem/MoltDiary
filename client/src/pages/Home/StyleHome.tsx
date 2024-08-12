@@ -36,6 +36,42 @@ export const HomeContentTitle = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.AlmondPeach};
   align-items: center;
   padding-bottom: 12px;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  form {
+    position: relative;
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      transform: translate(0%, -50%);
+
+      cursor: pointer;
+      path {
+        fill: ${({ theme }) => theme.colors.AlmondPeach};
+      }
+    }
+  }
+  input[type="text"]:focus + svg path {
+    fill: ${({ theme }) => theme.colors.PeachFuzz};
+  }
+  input[type="text"] {
+    border: 1px solid ${({ theme }) => theme.colors.AlmondPeach};
+    padding: 6px 12px;
+    position: relative;
+    &:focus {
+      outline: 1px solid ${({ theme }) => theme.colors.PeachFuzz};
+      border-radius: none;
+      outline-offset: 0px;
+      border: 1px solid ${({ theme }) => theme.colors.PeachFuzz};
+    }
+  }
   span {
     color: ${({ theme }) => theme.colors.PeachFuzz};
     font-weight: 300;
