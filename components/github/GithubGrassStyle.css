@@ -1,0 +1,85 @@
+/* 기본 빈 칸 */
+.color-empty {
+  fill: #d8c8bd; /* 빈 칸 색상 */
+}
+
+/* 기여도가 낮을 때 */
+.color-scale-1 {
+  fill: #60c8b3; /* 연한 녹색 */
+}
+
+/* 기여도가 중간일 때 */
+.color-scale-2 {
+  fill: #279d9f; /* 중간 녹색 */
+}
+
+/* 기여도가 많을 때 */
+.color-scale-3 {
+  fill: #6ea1d4; /* 짙은 녹색 */
+}
+
+/* 기여도가 아주 많을 때 */
+.color-scale-4 {
+  fill: #1b5081; /* 아주 짙은 녹색 */
+}
+.color-scale-5 {
+  fill: #1b5081; /* 아주 짙은 녹색 */
+}
+
+/* 각 월의 nth-child 인덱스에 맞게 월 이름을 한글로 변경 */
+.react-calendar-heatmap text {
+  font-size: 12px;
+}
+
+.react-calendar-heatmap-month-label:nth-child(1) {
+  fill: #d8c8bd;
+  content: "1월";
+}
+.react-calendar-heatmap-month-label:nth-child(2) {
+  fill: #d8c8bd;
+  content: "2월";
+}
+.react-calendar-heatmap-month-label:nth-child(3) {
+  fill: #d8c8bd;
+  content: "3월";
+}
+.react-calendar-heatmap-month-label:nth-child(4) {
+  fill: #d8c8bd;
+  content: "4월";
+}
+.react-calendar-heatmap-month-label:nth-child(5) {
+  fill: #d8c8bd;
+  content: "5월";
+}
+.react-calendar-heatmap-month-label:nth-child(6) {
+  fill: #d8c8bd;
+  content: "6월";
+}
+.react-calendar-heatmap-month-label:nth-child(7) {
+  fill: #d8c8bd;
+  content: "7월";
+}
+.react-calendar-heatmap-month-label:nth-child(8) {
+  fill: #d8c8bd;
+  content: "8월";
+}
+.react-calendar-heatmap-month-label:nth-child(9) {
+  fill: #d8c8bd;
+  content: "9월";
+}
+.react-calendar-heatmap-month-label:nth-child(10) {
+  fill: #d8c8bd;
+  content: "10월";
+}
+.react-calendar-heatmap-month-label:nth-child(11) {
+  fill: #d8c8bd;
+  content: "11월";
+}
+.react-calendar-heatmap-month-label:nth-child(12) {
+  fill: #d8c8bd;
+  content: "12월";
+}
+.react-calendar-heatmap {
+  padding: 10px;
+  box-shadow: 0px 0px 2px #d8c8bd;
+}

@@ -1,0 +1,62 @@
+/* calendar.css */
+.react-calendar {
+  width: 400px;
+  max-width: 100%;
+  background-color: #fff;
+  color: black;
+  border-radius: 8px;
+
+  line-height: 1.125em;
+  border: 1px solid #d8c8bd;
+}
+
+.react-calendar__tile {
+  color: black;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #6ea1d4; /* LittleBoyBlue */
+}
+
+.react-calendar__navigation button {
+  color: #ffbe98; /* PeachFuzz */
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #d8c8bd; /* AlmondPeach */
+  color: white;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--now {
+  background: #6ea1d4; /* LittleBoyBlue */
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #d8c8bd; /* AlmondPeach */
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+}
+
+.react-calendar__tile--active {
+  background: #1b5081; /* NauticalBlue */
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1b5081; /* NauticalBlue */
+  color: white;
+}
