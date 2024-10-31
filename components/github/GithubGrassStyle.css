@@ -1,26 +1,26 @@
 /* 기본 빈 칸 */
-.color-empty {
-  fill: #d8c8bd; /* 빈 칸 색상 */
+.react-calendar-heatmap .color-empty {
+  fill: #f1e8d9; /* 빈 칸 색상 */
 }
 
 /* 기여도가 낮을 때 */
 .color-scale-1 {
-  fill: #60c8b3; /* 연한 녹색 */
+  fill: #9bc4d5; /* 연한 녹색 */
 }
 
 /* 기여도가 중간일 때 */
 .color-scale-2 {
-  fill: #279d9f; /* 중간 녹색 */
+  fill: #6ea1d4; /* 중간 녹색 */
 }
 
 /* 기여도가 많을 때 */
 .color-scale-3 {
-  fill: #6ea1d4; /* 짙은 녹색 */
+  fill: #116383; /* 짙은 녹색 */
 }
 
 /* 기여도가 아주 많을 때 */
 .color-scale-4 {
-  fill: #1b5081; /* 아주 짙은 녹색 */
+  fill: #385466; /* 아주 짙은 녹색 */
 }
 .color-scale-5 {
   fill: #1b5081; /* 아주 짙은 녹색 */
@@ -28,7 +28,7 @@
 
 /* 각 월의 nth-child 인덱스에 맞게 월 이름을 한글로 변경 */
 .react-calendar-heatmap text {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .react-calendar-heatmap-month-label:nth-child(1) {
@@ -80,6 +80,6 @@
   content: "12월";
 }
 .react-calendar-heatmap {
-  padding: 10px;
-  box-shadow: 0px 0px 2px #d8c8bd;
+  padding: 10px 5px;
+  /* box-shadow: 0px px 3px #d8c8bd; */
 }

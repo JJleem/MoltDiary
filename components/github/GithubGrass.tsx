@@ -43,7 +43,7 @@ const GithubGrass = () => {
   });
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className=" h-[200px] flex flex-col gap-4 xxs:w-[900px] border border-AlmondPeach p-1 pr-2 pl-2 pb-2 sm:w-full">
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}
@@ -53,17 +53,17 @@ const GithubGrass = () => {
           return `color-scale-${value.count}`;
         }}
         titleForValue={(value) =>
-          value ? `${value.date} : ${value.count} commits` : "No data"
+          value ? `${value.date} : ${value.count} posts` : "No data"
         }
       />
-      <div className="w-full flex justify-end gap-1 items-center">
-        <div className="">Less</div>
+      <div className="w-[100%] flex justify-end gap-1 items-center">
+        <div className="text-sm font-bold">Less</div>
         <div className="w-[16px] h-[16px]  bg-AlmondPeach"></div>
-        <div className="w-[16px] h-[16px]  bg-Bermuda"></div>
-        <div className="w-[16px] h-[16px] bg-Baltic"></div>
+        <div className="w-[16px] h-[16px]  bg-Aquamarine"></div>
         <div className="w-[16px] h-[16px] bg-LittleBoyBlue"></div>
-        <div className="w-[16px] h-[16px] bg-NauticalBlue"></div>
-        <div>More</div>
+        <div className="w-[16px] h-[16px] bg-Seaport"></div>
+        <div className="w-[16px] h-[16px] bg-LegionBlue"></div>
+        <div className="text-sm font-bold">More</div>
       </div>
     </div>
   );
