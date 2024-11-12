@@ -1,7 +1,7 @@
 /* calendar.css */
 .react-calendar {
-  width: 400px;
-  max-width: 100%;
+  max-width: 300px;
+  width: 100%;
   background-color: #fff;
   color: black;
   border-radius: 8px;
@@ -59,4 +59,14 @@
 .react-calendar__tile--active:enabled:focus {
   background: #1b5081; /* NauticalBlue */
   color: white;
+}
+.react-calendar__navigation__label__labelText--from {
+  font-size: 12px;
+  font-weight: 700;
+}
+.react-calendar__navigation button:disabled {
+  background-color: transparent;
+}
+.react-calendar__navigation button {
+  min-width: 30px;
 }

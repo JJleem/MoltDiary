@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 import "./scrollCss.css";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -22,9 +24,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="h-auto">
-        <Header />
-        {children}
-        <Footer />
+        <Provider store={store}>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

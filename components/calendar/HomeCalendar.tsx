@@ -6,7 +6,11 @@ import "react-calendar/dist/Calendar.css";
 import "./Calendar.css"; // 커스터마이징된 CSS 파일 import
 import moment from "moment";
 
-const HomeCalendar = () => {
+interface HomeCalendarProps {
+  className?: string;
+}
+
+const HomeCalendar: React.FC<HomeCalendarProps> = ({ className }) => {
   const [value, setValue] = useState<Date | null | [Date | null, Date | null]>(
     null
   );
@@ -16,7 +20,9 @@ const HomeCalendar = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div
+      className={`w-full flex flex-col items-center z-10 md:flex ${className}`}
+    >
       <Calendar
         onChange={handleChange}
         value={value}
