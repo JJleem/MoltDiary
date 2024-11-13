@@ -1,0 +1,43 @@
+/* styles/EditorStyles.css */
+
+/* EditorContent 클래스의 focus 스타일 제거 */
+.ProseMirror-focused {
+  outline: none; /* 기본 포커스 아웃라인 제거 */
+  box-shadow: none; /* 추가된 박스 쉐도우 제거 */
+  border: none; /* 추가된 테두리 제거 */
+}
+.ProseMirror a {
+  text-decoration: underline;
+  color: blue;
+}
+.tooltip-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 60px; /* 툴팁의 너비 */
+  background-color: #000; /* 툴팁의 배경색 */
+  color: #fff; /* 툴팁의 텍스트 색 */
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  top: 80%; /* 버튼 위에 툴팁을 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.node-image {
+}

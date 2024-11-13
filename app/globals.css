@@ -107,11 +107,3 @@ button {
 }
 
 /* Anchor 및 list 스타일 */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  list-style: none;
-}

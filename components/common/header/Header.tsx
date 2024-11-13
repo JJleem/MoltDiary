@@ -5,10 +5,6 @@ import { RootState } from "@/store/store";
 import { asideToggle } from "@/store/toggleSlice";
 
 const Header = () => {
-  // const [isToggle, setIsToggle] = useRecoilState(AsideToogleState);
-  // const handleClickToggle = () => {
-  //   setIsToggle(!isToggle);
-  // };
   const isToggled = useSelector(
     (state: RootState) => state.asideToggle.isToggled
   );

@@ -46,8 +46,8 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ className }) => {
           </div>
         </div>
       </div>
-      <div className="sm:flex sm:flex-col sm:w-full sm:items-center sm:gap-[24px]">
-        <div className="w-full border-b border-AlmondPeach">
+      <div className=" flex sm:flex sm:flex-col sm:w-full sm:items-center xs:flex-col xs:gap-10   sm:gap-[24px]">
+        <div className="w-full border-b border-AlmondPeach ">
           <div className="pb-1.5 flex justify-between ">
             <div>
               분류 전체보기 <span className="text-PeachFuzz">(24)</span>
@@ -79,7 +79,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ className }) => {
           </ul>
         </div>
 
-        <div className="w-full border-b border-AlmondPeach">
+        <div className="w-full border-b border-AlmondPeach ">
           <div className="pb-1.5 flex justify-between">
             <div>
               태그 전체보기 <span className="text-PeachFuzz">(52)</span>

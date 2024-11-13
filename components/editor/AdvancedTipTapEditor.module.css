@@ -1,0 +1,12 @@
+/* AdvancedTipTapEditor.module.css */
+.editorContent ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem;
+  color: black;
+}
+
+.editorContent ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem;
+  color: black;
+}

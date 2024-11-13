@@ -4,7 +4,12 @@ import Aside from "@/components/common/aside/Aside";
 import ProfileSection from "@/components/common/profile/ProfileSection";
 import GithubGrass from "@/components/github/GithubGrass";
 
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
+
 export default function Home() {
+  const date = useSelector((state: RootState) => state.setDate.date);
+
   return (
     <div className="w-full flex flex-col items-center gap-12 2xl:pl-[240px] 2xl:pr-[240px] xl:pl-[160px] xl:pr-[160px] pb-[150px] lg:pl-[120px] lg:pr-[120px] xxs:pl-[24px] xxs:pr-[24px] overflow-x-hidden relative">
       <Aside />
@@ -15,16 +20,16 @@ export default function Home() {
             <GithubGrass />
           </div>
           <div className="w-[100%] flex gap-1.5 border-b border-AlmondPeach pb-3 justify-between items-center">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 w-full">
               <span>전체 게시글</span>
-              <span className="text-PeachFuzz">123123</span>
+              <span className="text-PeachFuzz ">999</span>
             </div>
             <form className="relative">
               <input
                 type="text"
                 placeholder="Search..."
                 maxLength={14}
-                className="border border-AlmondPeach p-1.5 pr-10 focus:outline-PeachFuzz"
+                className="xxs:w-40 xs:w-60 sm:w-auto border border-AlmondPeach p-1.5 pr-10 focus:outline-PeachFuzz"
               />
               <svg
                 width="24"
@@ -36,7 +41,7 @@ export default function Home() {
               </svg>
             </form>
           </div>
-          <div className="w-full border border-red-500 h-[100vh]">dd</div>
+          <div className="w-full border border-red-500 h-[100vh]">{date}</div>
         </div>
 
         {/* Profile Section */}

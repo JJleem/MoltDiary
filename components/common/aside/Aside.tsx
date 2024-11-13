@@ -1,21 +1,41 @@
 import { RootState } from "@/store/store";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ProfileSection from "../profile/ProfileSection";
+import { asideToggle } from "@/store/toggleSlice";
 
 const Aside = () => {
   const isToggled = useSelector(
     (state: RootState) => state.asideToggle.isToggled
   );
-  console.log("asidetoggle", isToggled);
-
+  const dispatch = useDispatch();
+  const handleClickToggle = () => {
+    dispatch(asideToggle());
+  };
+  const [showBackground, setShowBackground] = useState(false);
+  useEffect(() => {
+    if (isToggled) {
+      // 트랜지션이 끝난 후 배경을 표시
+      setTimeout(() => setShowBackground(true), 0); // 500ms는 duration-500과 일치
+    } else {
+      setTimeout(() => setShowBackground(false), 200);
+    }
+  }, [isToggled]);
   return (
     <div
-      className={`sm:hidden w-[80%] h-full  bg-white border border-red-500  px-8 flex  absolute z-50 transition-all duration-500 ${
-        isToggled ? "right-0" : "-right-full"
-      }`}
+      className={`sm:hidden w-full h-full absolute z-50  ${
+        showBackground ? "bg-opacity-30 bg-black z-50" : "-z-50 "
+      } ${isToggled ? "" : "z-50"}`}
+      onClick={handleClickToggle}
     >
-      <ProfileSection className="xxs:flex w-full gap-10" />
+      <div
+        className={`sm:hidden w-[80%] h-full    px-8 flex absolute bg-white  z-52 transition-right duration-500 ${
+          isToggled ? "right-0" : "-right-full"
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <ProfileSection className="xxs:flex w-full gap-10" />
+      </div>
     </div>
   );
 };

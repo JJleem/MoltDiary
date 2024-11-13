@@ -11,13 +11,13 @@ module.exports = {
         sans: ["Pretendard GOV Variable", "Pretendard GOV", "sans-serif"],
       },
       screens: {
-        xxs: "380px",
+        xxs: "359px",
         xs: "428px",
         sm: "744px",
         md: "1024px",
         lg: "1280px",
         xl: "1440px",
-        "2xl": "1536px",
+        xxl: "1536px",
       },
       fontSize: {
         p8: "8px",

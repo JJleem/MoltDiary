@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeCalendar from "../calendar/HomeCalendar";
 
 const CalendarIcon = () => {
+  const [isClick, setIsClick] = useState(true);
+  const handleClick = () => {
+    setIsClick(!isClick);
+  };
   return (
-    <div className=" z-10 xs:hidden sm:flex md:hidden absolute right-0 bottom-0 border border-red-500 p-8 bg-white">
-      <HomeCalendar />
+    <div
+      className={`z-10 xs:hidden sm:flex md:hidden absolute right-0 bottom-0  bg-white   cursor-pointer  ${
+        isClick
+          ? "shadow-sm  shadow-PeachFuzz drop-shadow-lg hover:scale-105 transition-scale duration-300 rounded-full p-5"
+          : "w-[50%] h-[400px]"
+      } `}
+    >
+      {isClick ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48px"
+          viewBox="0 -960 960 960"
+          width="48px"
+          fill="#D8C8BD"
+          onClick={handleClick}
+        >
+          <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+        </svg>
+      ) : (
+        <div className=" p-6 bg-white w-full relative pt-16">
+          <svg
+            className="cursor-pointer transition-colors duration-300 absolute right-0 top-0 hover:fill-Almondine "
+            onClick={handleClick}
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#D8C8BD"
+          >
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg>
+          <HomeCalendar />
+        </div>
+      )}
     </div>
   );
 };
