@@ -39,5 +39,15 @@
   opacity: 1;
 }
 
-.node-image {
+/* 이미지 컨테이너를 Flexbox로 설정 */
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* 여러 행으로 나눠 배치 가능 */
+  gap: 10px; /* 이미지 간의 간격 */
+}
+
+.image-container img {
+  width: calc(33.33% - 10px); /* 3개의 이미지를 균등하게 배치 */
+  height: auto;
+  object-fit: cover; /* 이미지 비율을 유지하며 크기 조정 */
 }

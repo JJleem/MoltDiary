@@ -23,6 +23,7 @@ const AdvancedTipTapEditor: React.FC = () => {
   const [url, setUrl] = useState("");
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [altText, setAltText] = useState("");
+  const [title, setTitle] = useState("");
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -46,6 +47,35 @@ const AdvancedTipTapEditor: React.FC = () => {
   if (!editor) {
     return null;
   }
+
+  const handleServerSubmit = async () => {
+    const content = editor.getHTML(); // 에디터의 내용을 HTML로 가져오기
+
+    const data = {
+      title,
+      content,
+    };
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("서버 요청에 실패했습니다.");
+      }
+
+      // 요청 성공 시 처리
+      alert("서버에 성공적으로 전송되었습니다!");
+    } catch (error) {
+      console.error("에러 발생:", error);
+      alert("서버 전송 중 오류가 발생했습니다.");
+    }
+  };
 
   const handleSubmit = () => {
     if (url) {
@@ -73,13 +103,35 @@ const AdvancedTipTapEditor: React.FC = () => {
     }
   };
 
+  // const addImage = () => {
+  //   // 파일 입력 요소 생성
+  //   const input = document.createElement("input");
+  //   input.type = "file";
+  //   input.accept = "image/*"; // 이미지 파일만 선택 가능
+
+  //   // 파일이 선택되었을 때 이벤트 처리
+  //   input.onchange = (event) => {
+  //     const file = (event.target as HTMLInputElement).files?.[0];
+  //     if (file) {
+  //       const reader = new FileReader();
+  //       reader.onload = () => {
+  //         const url = reader.result as string;
+  //         // TipTap 에디터에 이미지 삽입
+  //         editor.chain().focus().setImage({ src: url }).run();
+  //       };
+  //       reader.readAsDataURL(file); // 파일을 데이터 URL로 읽기
+  //     }
+  //   };
+
+  //   // 파일 입력 요소 클릭하여 파일 선택 창 열기
+  //   input.click();
+  // };
+
   const addImage = () => {
-    // 파일 입력 요소 생성
     const input = document.createElement("input");
     input.type = "file";
-    input.accept = "image/*"; // 이미지 파일만 선택 가능
+    input.accept = "image/*";
 
-    // 파일이 선택되었을 때 이벤트 처리
     input.onchange = (event) => {
       const file = (event.target as HTMLInputElement).files?.[0];
       if (file) {
@@ -89,15 +141,22 @@ const AdvancedTipTapEditor: React.FC = () => {
           // TipTap 에디터에 이미지 삽입
           editor.chain().focus().setImage({ src: url }).run();
         };
-        reader.readAsDataURL(file); // 파일을 데이터 URL로 읽기
+        reader.readAsDataURL(file);
       }
     };
 
-    // 파일 입력 요소 클릭하여 파일 선택 창 열기
     input.click();
   };
+
   return (
     <div className="border border-gray-300 p-4 rounded ">
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="제목을 입력하세요"
+        className="w-full mb-4 p-2 border rounded text-lg"
+      />
       {/* 툴바 구성 */}
       <div className="mb-12 flex sm:gap-4 w-full xs:justify-between sm:justify-start  ">
         <div className="tooltip-container ">
@@ -322,6 +381,12 @@ const AdvancedTipTapEditor: React.FC = () => {
       <div className={styles.editorContent}>
         <EditorContent editor={editor} spellCheck="false" />
       </div>
+      <button
+        onClick={handleServerSubmit}
+        className="mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+      >
+        제출하기
+      </button>
     </div>
   );
 };

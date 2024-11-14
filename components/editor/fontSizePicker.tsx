@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 
 interface FontSizePickerProps {
@@ -57,17 +58,17 @@ const FontSizePicker: React.FC<FontSizePickerProps> = ({ editor }) => {
             ))}
           </div>
           {/* 사용자 정의 폰트 크기 입력 */}
-          <div className="flex items-center gap-2 w-full border border-red-700">
+          <div className="flex items-center gap-2 w-full ">
             <input
               type="text"
               value={fontSize}
               onChange={(e) => setFontSize(e.target.value)}
-              className="border p-1 rounded"
+              className="border p-1 rounded w-[150px]"
               placeholder="16px"
             />
             <button
               onClick={() => applyFontSize(fontSize)}
-              className="bg-blue-500 text-white p-1 rounded hover:bg-blue-600"
+              className="bg-blue-500 text-white p-1 rounded hover:bg-blue-600 w-[50px]"
             >
               적용
             </button>

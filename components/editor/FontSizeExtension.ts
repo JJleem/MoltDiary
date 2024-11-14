@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Extension } from "@tiptap/core";
-
+import { CommandProps } from "@tiptap/core";
 const FontSizeExtension = Extension.create({
   name: "fontSize",
 
@@ -27,10 +28,10 @@ const FontSizeExtension = Extension.create({
     return {
       setFontSize:
         (size: string) =>
-        ({ chain }) => {
+        ({ chain }: CommandProps) => {
           return chain().setMark("textStyle", { fontSize: size }).run();
         },
-    };
+    } as any;
   },
 });
 
